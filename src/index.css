@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Cairo', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Custom scrollbar and snappy mobile touch response */
+html {
+  scroll-behavior: smooth;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Prevent mobile browsers (iOS Safari) from auto-zooming when a form field
+   is focused: they zoom whenever the field's font-size is below 16px. */
+@media (max-width: 1024px), (hover: none) and (pointer: coarse) {
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Rich Text Content Styling (Storeep & YouCan style descriptions) */
+.rich-description-content img {
+  max-width: 100% !important;
+  height: auto !important;
+  border-radius: 0.75rem;
+  margin: 0.75rem auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+.rich-description-content h1 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #111827;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.rich-description-content h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-top: 0.85rem;
+  margin-bottom: 0.4rem;
+  line-height: 1.4;
+}
+
+.rich-description-content h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #374151;
+  margin-top: 0.75rem;
+  margin-bottom: 0.35rem;
+  line-height: 1.4;
+}
+
+.rich-description-content ul {
+  list-style-type: disc;
+  padding-right: 1.25rem;
+  margin: 0.5rem 0;
+}
+
+.rich-description-content ol {
+  list-style-type: decimal;
+  padding-right: 1.25rem;
+  margin: 0.5rem 0;
+}
+
+.rich-description-content li {
+  margin-bottom: 0.3rem;
+}
+
+.rich-description-content blockquote {
+  border-right: 4px solid #0f766e;
+  background-color: #f0fdfa;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  margin: 0.75rem 0;
+  color: #134e4a;
+}
+
+.rich-description-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.85rem;
+}
+
+.rich-description-content th,
+.rich-description-content td {
+  border: 1px solid #e5e7eb;
+  padding: 0.5rem 0.75rem;
+}
+
+.rich-description-content th {
+  background-color: #f9fafb;
+  font-weight: 700;
+}
+
+.rich-description-content hr {
+  border: 0;
+  height: 1px;
+  background-color: #e5e7eb;
+  margin: 1rem 0;
+}
+
+.rich-description-content a {
+  color: #2563eb;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+/* Ticker / Marquee Animation for Announcement Bar */
+@keyframes marquee-scroll-continuous {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-ticker-continuous {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll-continuous var(--ticker-duration, 18s) linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@media (max-width: 640px) {
+  .animate-ticker-continuous {
+    animation-duration: var(--ticker-duration-mobile, 10s) !important;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .pause-hover:hover {
+    animation-play-state: paused;
+  }
+}
+
+

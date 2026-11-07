@@ -1,0 +1,6 @@
+{
+  "name": "متجر الدفع عند الاستلام المتكامل",
+  "description": "متجر إلكتروني متكامل للتجارة بنظام الدفع عند الاستلام مع تخصيصات المنتجات ولوحة تحكم متطورة",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

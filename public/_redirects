@@ -1,0 +1,5 @@
+# إعادة توجيه Cloudflare Pages — تُنسخ إلى dist تلقائياً (مجلد public).
+# في الجولة الثانية (Edge SSR): Pages Function (functions/[[path]].js) يخدم كل مسارات HTML
+# (الرئيسية / وصفحات المنتجات /product/<slug> ولوحة التحكم /#admin).
+# لا حاجة إلى SPA fallback /* — الدالة تستقبل كل طلب لا يطابق ملفاً ثابتاً.
+# الأصول الثابتة /assets/* و /uploads/* تُخدم مباشرة من dist (لها أولوية على الدالة).

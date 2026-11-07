@@ -1,0 +1,16 @@
+# رؤوس Cloudflare Pages — تُنسخ إلى dist تلقائياً (مجلد public).
+# الصفحة الافتراضية: HTML دائماً يُعاد التحقق منه فوراً (لتنتشر تحديثات لقطة النشر دون تأخير).
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Cache-Control: public, max-age=0, must-revalidate
+
+# أصول Vite المُهشمة (JS/CSS) — تخزين مؤقت طويل غير قابل للتغيير.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# الصور المرفوعة (uploads) — ثابتة، تخزين مؤقت طويل.
+/uploads/*
+  Cache-Control: public, max-age=31536000, immutable
